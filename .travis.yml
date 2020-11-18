@@ -47,7 +47,67 @@ jobs:
       rvm: jruby-head
     - env: ASCIIDOCTOR_VERSION="git:master"
       rvm: *ruby-latest
+      # added power support arch ppc64le.
+    - env: &adoc-latest ASCIIDOCTOR_VERSION=2.0.6
+      rvm: &ruby-latest 2.5
+      arch: ppc64le
+    - env: *adoc-latest
+      rvm: 2.4
+      arch: ppc64le
+    - env: *adoc-latest
+      rvm: 2.3
+      arch: ppc64le
+    - env: *adoc-latest
+      rvm: 2.2
+      arch: ppc64le
+    - env: *adoc-latest
+      rvm: jruby-9.1
+      arch: ppc64le
+    - env: *adoc-latest
+      rvm: ruby-head
+      arch: ppc64le
+    - env: *adoc-latest
+      rvm: jruby-head
+      arch: ppc64le
 
+    - env: ASCIIDOCTOR_VERSION=1.5.8
+      rvm: *ruby-latest
+      arch: ppc64le
+
+    - env: ASCIIDOCTOR_VERSION=1.5.7.1
+      rvm: *ruby-latest
+      arch: ppc64le
+
+    - env: ASCIIDOCTOR_VERSION=1.5.7
+      rvm: *ruby-latest
+      arch: ppc64le
+
+    - env: ASCIIDOCTOR_VERSION=1.5.6.2
+      rvm: *ruby-latest
+      arch: ppc64le
+
+    - env: ASCIIDOCTOR_VERSION=1.5.6.1
+      rvm: 2.4
+      arch: ppc64le
+
+    - env: ASCIIDOCTOR_VERSION=1.5.6
+      rvm: 2.4
+      arch: ppc64le
+
+    - env: ASCIIDOCTOR_VERSION="git:master"
+      rvm: *ruby-latest
+      arch: ppc64le
+
+  allow_failures:
+    - env: *adoc-latest
+      rvm: ruby-head
+      arch: ppc64le
+    - env: *adoc-latest
+      rvm: jruby-head
+      arch: ppc64le
+    - env: ASCIIDOCTOR_VERSION="git:master"
+      rvm: *ruby-latest
+      arch: ppc64le
 env:
   global:
     secure: "TjlWUc2XmQa3exPjXuWuF2KM53bCRsX9vDfi4QEdCF4A1ffT8FquX/wPrZnUTUbPweRhZoJe9hh6D2UfuFsVIm3QEnLdKD7Vstua2tRfCyqJdLyK8Iil2AQr1xmyt2gqm79PMpfczu4Pubfd84iMNPa4+frMm4pAbFjm478w1blewgmImFVM1OjIYfBpFPqnsihCHFmExG8fpKg4AD6AMNZkzfStP+n/7y+WTJ3SbRqmJfkEUiH/u3YNsutJO6kBbGSjEhmwXQQ2FJhkkquBkH2STWcusk66FzLmAYL10Wkdtv8Yu1EXzcxbHxFZjhjAHmMahSeiS8BRM8HnD6XaKCBdnAsLllV2kjzta9OKQTv5NyYJkvDhlPzlMu58QanSQg3PwHqXfLcA85dxaNhWw6ZibUS0NbwlL5mUmG7AqaaASAZRPiaK3jSuT9cijKU4cvpvgnjbPUTiTy9xFZs2TskxU5/8KJPNDokmonqSH2JM7IxxINKxsVeXc6TtYSLQphW/PfGLeXGaYZYsRxLdmVch6tJIC91j/Qt+hKbnD8rpRh38/rqHEqIZsHCS+6qZVdNUw/ca/v69c+LZX2wXOL9SHwJ7ZCIit7wrOjAoot/HDgvTH0M7y8lccip0uoTaDgYoj8xY3pWExFRm9JwPK8SkXay5rMc35p8b4f+9r34="  # CODACY_PROJECT_TOKEN
